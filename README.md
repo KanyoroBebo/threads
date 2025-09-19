@@ -167,5 +167,5 @@ project4/                # Django project root
 ## Credits
 
 * Inspired by the **CS50 Web Programming with Python and JavaScript** course.
-* Built and customized by **[Your Name]**.
+* Built and customized by **[Kevin Kanyoro]**.
 
