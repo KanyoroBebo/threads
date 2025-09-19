@@ -1,0 +1,33 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div id="new_post" style="display: block;">
+        <h3>New Thread</h1>
+        <form id="create_post" method="post">
+            {% csrf_token %}
+            <textarea name="content" rows="2" cols="30" placeholder="What's on your mind?🤔."></textarea>
+            <button id="submit" type="submit" class="btn btn-sm btn-primary">Post</button>
+        </form>
+    </div>
+
+    <div id="profile-view">
+        <h2 id="profile-username"></h2>
+        <p>Followers: <span id="follower-count"></span></p>
+        <p>Following: <span id="following-count"></span></p>
+        <button id="follow-btn"></button>
+        <div id="profile-posts"></div>
+    </div>
+        
+    <div id="all_posts"></div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+    <script>
+    dayjs.extend(dayjs_plugin_relativeTime);
+    </script>
+
+    <script src="{% static 'network/posts.js' %}"></script>
+{% endblock %}
